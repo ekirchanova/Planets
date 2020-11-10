@@ -27,7 +27,7 @@ function addNewPlanet(planet)
   document.body.append(div);
 }
 function writeInfo(planets,nameNeededPlanet){
-  const neededPlanet=planets.find(planet =>planet.name==nameNeededPlanet);
+  const neededPlanet=planets.find(planet =>planet.name == nameNeededPlanet);
   if(neededPlanet.residents.length == 0){
     return;
   }
@@ -41,14 +41,14 @@ function writeInfo(planets,nameNeededPlanet){
 }
 function handler(event){
   const id = event.target.id;
-  planets.then(result=>{
+  planets.then(result =>{
     writeInfo(result.results,id);
   }
   )
 }
 
 function addAllPlanets(planets){
-  const html = planets.map( element =>{
+  const html = planets.map(element =>{
    addNewPlanet(element)
   });
 }
