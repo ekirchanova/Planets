@@ -28,6 +28,9 @@ function addNewPlanet(planet)
 }
 function writeInfo(planets,nameNeededPlanet){
   const neededPlanet=planets.find(planet =>planet.name==nameNeededPlanet);
+  if(neededPlanet.residents.length == 0){
+    return;
+  }
   const residentsUrl = neededPlanet.residents;
   const rand = Math.floor( Math.random() * residentsUrl.length);
   const residentUrl = residentsUrl[rand];
