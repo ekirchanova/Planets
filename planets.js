@@ -28,7 +28,7 @@ function addNewPlanet(planet)
 }
 function writeInfo(planets,nameNeededPlanet){
   const neededPlanet=planets.find(planet =>planet.name == nameNeededPlanet);
-  if(neededPlanet.residents.length == 0){
+  if(!neededPlanet ||neededPlanet.residents.length == 0){
     return;
   }
   const residentsUrl = neededPlanet.residents;
